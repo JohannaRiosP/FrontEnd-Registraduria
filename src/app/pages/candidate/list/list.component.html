@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header>
+                ADMINISTRACIóN DE CANDIDATOS
+                <button type="button" class="btn btn-success" (click)="create()">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </nb-card-header>
+            <table class="candidate">
+                <tr>
+                    <th *ngFor="let column of columnNames">{{column}}</th>
+                </tr>
+                <ng-container *ngFor="let candidate of candidates">
+                    <tr>
+                        <td>{{candidate.personalId}}</td>
+                        <td>{{candidate.resolutionNumber}}</td>
+                        <td>{{candidate.name}}</td>
+                        <td>{{candidate.lastname}}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" (click)="edit(table._id)">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" (click)="delete(table._id)">
+                                <i class="fas fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr> 
+                </ng-container>
+            </table>
+        </nb-card>
+    </div>
+</div>

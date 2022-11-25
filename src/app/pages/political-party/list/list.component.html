@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-header>
+                ADMINISTRACIóN DE PARTIDOS POLITICOS
+                <button type="button" class="btn btn-success" (click)="create()">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </nb-card-header>
+            <table class="politicalParty">
+                <tr>
+                    <th *ngFor="let column of columnNames">{{column}}</th>
+                </tr>
+                <ng-container *ngFor="let politicalparty of politicalparty">
+                    <tr>
+                        <td>{{politicalParty.name}}</td>
+                        <td>{{politicalParty.motto}}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" (click)="edit(table._id)">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" (click)="delete(table._id)">
+                                <i class="fas fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr> 
+                </ng-container>
+            </table>
+        </nb-card>
+    </div>
+</div>

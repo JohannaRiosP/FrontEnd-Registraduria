@@ -1,0 +1,43 @@
+<div class="row">
+    <div class=" col-lg-12">
+        <nb-card>
+            <nb-card-header *ngIf="creationMode">
+                CREAR PARTIDO POLITICO
+            </nb-card-header>
+            <nb-card-header *ngIf="!creationMode">
+                ACTUALIZAR PARTIDO POLITICO
+            </nb-card-header>
+            <nb-card-body>
+                <div class="row"> 
+                    <div class="col-log-3">
+                        <label>Nombre</label>
+                    </div>
+                    <div class="col-log-9">
+                        <input type="text" class="form-control"
+                                [disabled]="!creationMode" [(ngModel)]="politicalparty.name">
+                                <p *ngIf=" sendingAttemp && politicalparty.name== ''">Requerido</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-log-3">
+                            <label>Lema</label>
+                        </div>
+                    <div class="col-log-9">
+                        <input  type="text" class="form-control" 
+                                [disabled]="!creationMode" [(ngModel)]="politicalparty.motto">
+                                <p *ngIf="sendingAttemp && politicalparty.motto==''">Requerido</p>
+                        </div>
+                    </div>
+                    <br/>
+                        <div class="row">
+                            <button *ngIf="creationMode" class="btn btn-primary btn-block" (click)="create()">
+                                Crear
+                            </button>
+                            <button *ngIf="creationMode" class="btn btn-primary btn-block" (click)="edit()">
+                                Actualizar
+                            </button>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
