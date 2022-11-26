@@ -11,7 +11,7 @@ import { RolModule } from '../rol.module';
 })
 export class ListComponent implements OnInit {
 
-  columnNames: string[] = ['Nombre', 'Opciones'];
+  columnNames: string[] = ['Nombre', 'Descripcion', 'Opciones'];
   roles: RolModule[];
 
   constructor(private rolesServices: RolesService,
