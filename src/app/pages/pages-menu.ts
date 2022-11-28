@@ -2,47 +2,59 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'E-commerce',
-    icon: 'shopping-cart-outline',
+    title: 'General',
+    icon: '',
     link: '/pages/dashboard',
     home: true,
   },
   {
-    title: 'IoT Dashboard',
+    title: 'Mesas',
     icon: 'home-outline',
-    link: '/pages/iot-dashboard',
+    link: '/pages/mesas/listar',
   },
   {
-    title: 'FEATURES',
-    group: true,
+    title: 'Candidatos',
+    icon: 'home-outline',
+    link: '/pages/candidatos/listar',
   },
   {
-    title: 'Layout',
-    icon: 'layout-outline',
+    title: 'Partidos Politicos',
+    icon: 'home-outline',
+    link: '/pages/partidospoliticos/listar',
+  },
+ 
+  {
+    title: 'Reportes',
+    icon: '',
     children: [
       {
-        title: 'Stepper',
+        title: 'Votos totales',
         link: '/pages/layout/stepper',
       },
       {
-        title: 'List',
+        title: 'Votos por candidatos',
         link: '/pages/layout/list',
       },
       {
-        title: 'Infinite List',
+        title: 'Votos por partidos',
         link: '/pages/layout/infinite-list',
       },
       {
-        title: 'Accordion',
+        title: 'Votos por candidato',
         link: '/pages/layout/accordion',
       },
       {
-        title: 'Tabs',
+        title: 'Votos por partido',
         pathMatch: 'prefix',
         link: '/pages/layout/tabs',
       },
     ],
   },
+  {
+    title: 'FEATURES',
+    group: true,
+  },
+  /*
   {
     title: 'Forms',
     icon: 'edit-2-outline',
@@ -243,5 +255,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/auth/reset-password',
       },
     ],
-  },
+  },*/
 ];

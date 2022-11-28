@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Candidate } from '../../../models/candidate.model';
 import { CandidatesService } from '../../../services/candidates.service';
 import { ReportsService } from '../../../services/reports.service';
 
@@ -10,7 +11,11 @@ import { ReportsService } from '../../../services/reports.service';
 export class CandidatesComponent implements OnInit {
 
   dataCandidates: Object;
-  dataCandidate: Object;
+  dataCandidate: Object = {
+    name: "",
+    lastname: "",
+    resolutionNumber: null,
+  }
   candidates: Candidate[];
   candidateId: string = "";
   totalMode: boolean = true; // true=all false=one
@@ -20,10 +25,8 @@ export class CandidatesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCandidates();
-    /*if(this.totalMode)
+    if(this.totalMode)
       this.getDataFull();
-    else
-      this.getDataOne(this.candidateId);*/
   }
 
   getCandidates(): void{
@@ -62,4 +65,11 @@ export class CandidatesComponent implements OnInit {
       }
     );
   }
-}
+  change(): void{
+    if(this.candidateId!="")
+      this.getDataOne();
+    else
+      this.getDataFull();
+      this.ngOnInit();
+    }
+  }
