@@ -21,9 +21,10 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { ReportsComponent } from './models/reports/reports.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ReportsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

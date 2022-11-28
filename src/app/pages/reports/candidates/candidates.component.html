@@ -1,1 +1,17 @@
-<p>candidates works!</p>
+<div class="row">
+    <div class=" col-lg-12">
+        <nb-card>
+            <nb-card-header>
+                REPORTE DE VOTACIONES POR CANDIDATO
+                <select class="form-control" [(ngModel)]="candidateId" fullWidth>
+                    <option *ngFor="let candidate of candidates"[value]="candidate._id">{{candidate.name}}</option>
+                </select>
+            </nb-card-header>
+            <nb-card-body>
+                <div class="row"> 
+                    
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>
